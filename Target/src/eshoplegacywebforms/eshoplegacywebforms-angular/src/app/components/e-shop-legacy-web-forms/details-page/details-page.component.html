@@ -1,0 +1,100 @@
+<div *ngIf='model' class='eShopLegacyWebForms_Details'>
+   <ng-template #MainContent let-model='model'>
+      <h2 class="esh-body-title">
+         Details
+      </h2>
+      <div class="container">
+         <div class="row">
+            <wm-image id="imgPicture" [model]="model.imgPicture" class="imgPicture col-md-6 esh-picture">
+            </wm-image>
+            <dl class="col-md-6 dl-horizontal">
+               <dt>
+                  Name
+               </dt>
+               <dd>
+                  <wm-label id="lblName" [model]="model.lblName" class="lblName">
+                  </wm-label>
+
+               </dd>
+               <dt>
+                  Description
+               </dt>
+               <dd>
+                  <wm-label id="lblDescription" [model]="model.lblDescription" class="lblDescription">
+                  </wm-label>
+
+               </dd>
+               <dt>
+                  Brand
+               </dt>
+               <dd>
+                  <wm-label id="lblBrand" [model]="model.lblBrand" class="lblBrand">
+                  </wm-label>
+
+               </dd>
+               <dt>
+                  Type
+               </dt>
+               <dd>
+                  <wm-label id="lblType" [model]="model.lblType" class="lblType">
+                  </wm-label>
+
+               </dd>
+               <dt>
+                  Price
+               </dt>
+               <dd>
+                  <wm-label id="lblPrice" [model]="model.lblPrice" class="lblPrice esh-price">
+                  </wm-label>
+
+               </dd>
+               <dt>
+                  Picture name
+               </dt>
+               <dd>
+                  <wm-label id="lblPictureName" [model]="model.lblPictureName" class="lblPictureName">
+                  </wm-label>
+
+               </dd>
+               <dt>
+                  Stock
+               </dt>
+               <dd>
+                  <wm-label id="lblStock" [model]="model.lblStock" class="lblStock">
+                  </wm-label>
+
+               </dd>
+               <dt>
+                  Restock
+               </dt>
+               <dd>
+                  <wm-label id="lblRestock" [model]="model.lblRestock" class="lblRestock">
+                  </wm-label>
+
+               </dd>
+               <dt>
+                  Max stock
+               </dt>
+               <dd>
+                  <wm-label id="lblMaxstock" [model]="model.lblMaxstock" class="lblMaxstock">
+                  </wm-label>
+
+               </dd>
+
+            </dl>
+
+         </div>
+         <div class="form-actions no-color esh-link-list">
+            <wm-hyperlink id="btnEditPage" [model]="model.btnEditPage" class="btnEditPage esh-link-item" text="Edit">
+            </wm-hyperlink>
+            |<wm-alink runat="server" class="esh-link-item" [Target]="'eShopLegacyWebForms.Home'" [model]="model">
+               Back to list
+            </wm-alink>
+
+         </div>
+
+      </div>
+
+   </ng-template>
+
+</div>

@@ -1,0 +1,67 @@
+<div *ngIf='model' class='eShopLegacyWebForms_Home'>
+   <ng-template #MainContent let-model='model'>
+      <div class="esh-table">
+         <p class="esh-link-wrapper">
+            <wm-alink id="btnCreateNew" runat="server" class="btn esh-button esh-button-primary" [Target]="'eShopLegacyWebForms.Catalog.Create'" [model]="model">
+               Create New
+            </wm-alink>
+
+         </p>
+         <wm-gridview id="productList" [model]="model.productList" class="productList table" [allowPaging]="true" [pageSize]="8">
+            <HeaderStyle CssClass="esh-table-header">
+            </HeaderStyle>
+            <wm-gridview-columns>
+               <wm-template-field>
+                  <ng-template let-model #ItemTemplate>
+                     <wm-image id="aspimage" [model]="model.aspimage" class="aspimage esh-thumbnail">
+                     </wm-image>
+
+                  </ng-template>
+
+               </wm-template-field>
+               <wm-bound-field>
+               </wm-bound-field>
+               <wm-bound-field>
+               </wm-bound-field>
+               <wm-bound-field>
+               </wm-bound-field>
+               <wm-bound-field>
+               </wm-bound-field>
+               <wm-bound-field>
+               </wm-bound-field>
+               <wm-bound-field>
+               </wm-bound-field>
+               <wm-bound-field>
+               </wm-bound-field>
+               <wm-bound-field>
+               </wm-bound-field>
+               <wm-bound-field>
+               </wm-bound-field>
+               <wm-template-field>
+                  <ng-template let-model #ItemTemplate>
+                     <wm-hyperlink id="btnEdit" [model]="model.btnEdit" class="btnEdit esh-table-link">
+                     </wm-hyperlink>
+                     |<wm-hyperlink id="btnDetails" [model]="model.btnDetails" class="btnDetails esh-table-link">
+                     </wm-hyperlink>
+                     |<wm-hyperlink id="btnDelete" [model]="model.btnDelete" class="btnDelete esh-table-link">
+                     </wm-hyperlink>
+
+                  </ng-template>
+
+               </wm-template-field>
+
+            </wm-gridview-columns>
+            <PagerSettings Mode="NextPrevious" NextPageText="Next" PreviousPageText="Previous">
+            </PagerSettings>
+            <PagerStyle HorizontalAlign="Center">
+            </PagerStyle>
+            <RowStyle HorizontalAlign="Center">
+            </RowStyle>
+
+         </wm-gridview>
+
+      </div>
+
+   </ng-template>
+
+</div>

@@ -1,0 +1,133 @@
+<div *ngIf='model' class='eShopLegacyWebForms_Create'>
+   <ng-template #MainContent let-model='model'>
+      <h2 class="esh-body-title">
+         Create
+      </h2>
+      <div>
+         <div class="form-horizontal">
+            <div class="form-group">
+               <label class="control-label col-md-2">
+                  Name
+               </label>
+               <div class="col-md-3">
+                  <wm-asp-textbox id="txt_Name" [model]="model.txt_Name" class="txt_Name form-control">
+                  </wm-asp-textbox>
+                  <wm-required-field-validator id="NameValidator" [model]="model.NameValidator" class="NameValidator field-validation-valid text-danger">
+                  </wm-required-field-validator>
+
+               </div>
+
+            </div>
+            <div class="form-group">
+               <label class="control-label col-md-2">
+                  Description
+               </label>
+               <div class="col-md-3">
+                  <wm-asp-textbox id="Description" [model]="model.Description" class="Description form-control">
+                  </wm-asp-textbox>
+
+               </div>
+
+            </div>
+            <div class="form-group">
+               <label class="control-label col-md-2">
+                  Brand
+               </label>
+               <div class="col-md-3">
+                  <wm-dropdown-list id="Brand" [model]="model.Brand" class="Brand form-control">
+                  </wm-dropdown-list>
+
+               </div>
+
+            </div>
+            <div class="form-group">
+               <label class="control-label col-md-2">
+                  Type
+               </label>
+               <div class="col-md-3">
+                  <wm-dropdown-list id="Type" [model]="model.Type" class="Type form-control">
+                  </wm-dropdown-list>
+
+               </div>
+
+            </div>
+            <div class="form-group">
+               <label class="control-label col-md-2">
+                  Price
+               </label>
+               <div class="col-md-3">
+                  <wm-asp-textbox id="Price" [model]="model.Price" class="Price form-control">
+                  </wm-asp-textbox>
+                  <wm-range-validator id="PriceValidator" [model]="model.PriceValidator" class="PriceValidator text-danger">
+                  </wm-range-validator>
+
+               </div>
+
+            </div>
+            <div class="form-group">
+               <label class="control-label col-md-2">
+                  Picture name
+               </label>
+               <div class="col-md-4 esh-form-information">
+                  Uploading images not allowed for this version.
+               </div>
+
+            </div>
+            <div class="form-group">
+               <label class="control-label col-md-2">
+                  Stock
+               </label>
+               <div class="col-md-3">
+                  <wm-asp-textbox id="Stock" [model]="model.Stock" class="Stock form-control">
+                  </wm-asp-textbox>
+                  <wm-range-validator id="StockValidator" [model]="model.StockValidator" class="StockValidator text-danger">
+                  </wm-range-validator>
+
+               </div>
+
+            </div>
+            <div class="form-group">
+               <label class="control-label col-md-2">
+                  Restock
+               </label>
+               <div class="col-md-3">
+                  <wm-asp-textbox id="Restock" [model]="model.Restock" class="Restock form-control">
+                  </wm-asp-textbox>
+                  <wm-range-validator id="RestockValidator" [model]="model.RestockValidator" class="RestockValidator text-danger">
+                  </wm-range-validator>
+
+               </div>
+
+            </div>
+            <div class="form-group">
+               <label class="control-label col-md-2">
+                  Max stock
+               </label>
+               <div class="col-md-3">
+                  <wm-asp-textbox id="Maxstock" [model]="model.Maxstock" class="Maxstock form-control">
+                  </wm-asp-textbox>
+                  <wm-range-validator id="MaxstockValidator" [model]="model.MaxstockValidator" class="MaxstockValidator text-danger">
+                  </wm-range-validator>
+
+               </div>
+
+            </div>
+            <div class="form-group">
+               <div class="col-md-offset-2 col-md-3 esh-button-actions">
+                  <wm-alink runat="server" class="btn esh-button esh-button-secondary" [Target]="'eShopLegacyWebForms.Home'" [model]="model">
+                     [ Cancel ]
+                  </wm-alink>
+                  <wm-button id="btnCreate" [model]="model.btnCreate" class="btnCreate btn esh-button esh-button-primary" text="[ Create ]" [eventsContext]="this" wmClientClick>
+                  </wm-button>
+
+               </div>
+
+            </div>
+
+         </div>
+
+      </div>
+
+   </ng-template>
+
+</div>

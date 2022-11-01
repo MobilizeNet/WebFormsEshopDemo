@@ -1,0 +1,38 @@
+<div *ngIf='model' class='eShopLegacyWebForms_LogIn'>
+   <div class="d-flex justify-content-center pt-5">
+      <form runat="server" class="login-form">
+         <h3 class="text-center mb-3">
+            Log in
+         </h3>
+         <!-- Username input -->
+         <div class="form-outline mb-4">
+            <label class="form-label" for="txtUsername">
+               Username
+            </label>
+            <wm-asp-textbox id="txtUsername" [model]="model.txtUsername" class="txtUsername form-control">
+            </wm-asp-textbox>
+
+         </div>
+         <!-- Password input -->
+         <div class="form-outline mb-4">
+            <label class="form-label" for="txtPassword">
+               Password
+            </label>
+            <wm-asp-textbox id="txtPassword" [model]="model.txtPassword" class="txtPassword form-control">
+            </wm-asp-textbox>
+
+         </div>
+         <!-- Submit button -->
+         <div class="form-outline mb-4">
+            <wm-button id="btnLogin" [model]="model.btnLogin" class="btnLogin" text="Log in" [eventsContext]="this" wmClientClick>
+            </wm-button>
+
+         </div>
+         <wm-label id="lblErrorMessage" [model]="model.lblErrorMessage" class="lblErrorMessage error-message">
+         </wm-label>
+
+      </form>
+
+   </div>
+
+</div>

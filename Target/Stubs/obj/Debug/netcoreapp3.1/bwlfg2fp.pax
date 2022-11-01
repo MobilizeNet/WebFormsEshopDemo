@@ -1,0 +1,15 @@
+obj\Debug\netcoreapp3.1\Mobilize.Web.Extensions\HttpSessionStateExtensions.webmap.cs
+obj\Debug\netcoreapp3.1\System.IO.Compression\ZipFile.webmap.cs
+obj\Debug\netcoreapp3.1\Properties\AssemblyInfo.webmap.cs
+obj\Debug\netcoreapp3.1\System.Web.ModelBinding\ModelStateDictionary.webmap.cs
+obj\Debug\netcoreapp3.1\System.Web.Optimization\BundleCollection.webmap.cs
+obj\Debug\netcoreapp3.1\System.Web.Optimization\Bundle.webmap.cs
+obj\Debug\netcoreapp3.1\System.Web.Optimization\BundleTable.webmap.cs
+obj\Debug\netcoreapp3.1\System.Web.Optimization\IItemTransform.webmap.cs
+obj\Debug\netcoreapp3.1\System.Web.Optimization\ScriptBundle.webmap.cs
+obj\Debug\netcoreapp3.1\System.Web.Optimization\StyleBundle.webmap.cs
+obj\Debug\netcoreapp3.1\System.Web.UI\ScriptManager.webmap.cs
+obj\Debug\netcoreapp3.1\System.Web.UI\ControlCollection.webmap.cs
+obj\Debug\netcoreapp3.1\System.Web.UI\ScriptResourceDefinition.webmap.cs
+obj\Debug\netcoreapp3.1\System.Web\HttpApplication.webmap.cs
+obj\Debug\netcoreapp3.1\System.Web.UI\ScriptResourceMapping.webmap.cs

@@ -1,0 +1,47 @@
+<div *ngIf='model' class='eShopLegacyWebForms_SiteMaster'>
+   <wm-stub data-missing-type='asp:PlaceHolder'>
+   </wm-stub>
+   <!--<webopt:BundleReference runat="server" Path="/Content/css" />-->
+   <form runat="server">
+      <wm-stub data-missing-type='asp:ScriptManager'>
+      </wm-stub>
+      <header class="navbar navbar-light navbar-static-top">
+         <div class="esh-header-brand">
+            <wm-alink runat="server" [Target]="'eShopLegacyWebForms.Home'" [model]="model">
+               <img src="assets\images\brand.png"/>
+
+            </wm-alink>
+
+         </div>
+         <div class="esh-header-session">
+            <wm-label id="lblUsername" [model]="model.lblUsername" class="lblUsername">
+            </wm-label>
+            <wm-button id="btnLogout" [model]="model.btnLogout" class="btnLogout btn btn-link" text="Logout" [eventsContext]="this" wmClientClick>
+            </wm-button>
+
+         </div>
+
+      </header>
+      <section class="esh-app-hero">
+         <div class="container esh-header">
+            <h1 class="esh-header-title">
+               Catalog manager<span>
+                  (Web Forms)
+               </span>
+
+            </h1>
+
+         </div>
+
+      </section>
+      <div>
+         <ng-container [ngTemplateOutlet]="MainContent_content" [ngTemplateOutletContext]="{model: childModel}">
+         </ng-container>
+
+      </div>
+
+   </form>
+   <wm-container>
+   </wm-container>
+
+</div>

@@ -1,0 +1,143 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <StartupObject>WebSite.Startup</StartupObject>
+        <AssemblyName>eShopLegacyWebForms</AssemblyName>
+        <ProjectGuid>4416714a-9bb8-480b-95b3-c2599598e3ec</ProjectGuid>
+        <Deterministic>False</Deterministic>
+        <LangVersion>7.3</LangVersion>
+         </PropertyGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\Stubs\Stubs.csproj"/>
+    </ItemGroup>
+    <ItemGroup>
+            <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.22" />
+            <PackageReference Include="Microsoft.Extensions.PlatformAbstractions" Version="1.1.0" />
+        <PackageReference Include="Microsoft.VisualBasic" Version="10.4.0-preview.18571.3" />
+        <PackageReference Include="Mobilize.Extensions.Logging.RollingFile" Version="2.1.1-rc0027" />
+        <PackageReference Include="Mobilize.Web.BundleBasic.WebForms.All" Version="1.10.3"/>
+        <PackageReference Include="Mobilize.Weaving.WebMapExtensions.All" Version="7.0.40"/>
+        <PackageReference Include="Mobilize.Weaving" Version="2.1.0"/>
+        <PackageReference Include="Mobilize.WebMap.CoreServices.All" Version="7.1.4"/>
+        <PackageReference Include="EntityFramework" Version="6.4.4"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="Views\**\*.cshtml" />
+        <Content Include="Views\**\*.config" />
+        <Compile Remove="eshoplegacywebforms-angular\**" />
+        <Content Remove="eshoplegacywebforms-angular\**" />
+        <EmbeddedResource Remove="eshoplegacywebforms-angular\**" />
+        <None Remove="eshoplegacywebforms-angular\**" />
+		        <Compile Remove="..\..\Stubs\**" />
+		<Content Remove="..\..\Stubs\**" />
+		<EmbeddedResource Remove="..\..\Stubs\**" />
+		<None Remove="..\..\Stubs\**" />
+    </ItemGroup>
+    <ItemGroup>
+      <Reference Include="Antlr3.Runtime">
+      <HintPath>..\..\lib\Antlr3.Runtime.dll</HintPath>
+      </Reference>
+      <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\..\lib\AspNet.ScriptManager.bootstrap.dll</HintPath>
+      </Reference>
+      <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\..\lib\AspNet.ScriptManager.jQuery.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\..\lib\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\..\lib\Microsoft.AI.DependencyCollector.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\..\lib\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\..\lib\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\..\lib\Microsoft.AI.Web.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\..\lib\Microsoft.AI.WindowsServer.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\..\lib\Microsoft.ApplicationInsights.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\..\lib\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.AspNet.SessionState.SessionStateModule">
+      <HintPath>..\..\lib\Microsoft.AspNet.SessionState.SessionStateModule.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\..\lib\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <HintPath>..\..\lib\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\..\lib\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.Owin">
+      <HintPath>..\..\lib\Microsoft.Owin.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\..\lib\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\..\lib\Microsoft.ScriptManager.WebForms.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\..\lib\Microsoft.Web.Infrastructure.dll</HintPath>
+      </Reference>
+      <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\lib\Newtonsoft.Json.dll</HintPath>
+      </Reference>
+      <Reference Include="Owin">
+      <HintPath>..\..\lib\Owin.dll</HintPath>
+      </Reference>
+      <Reference Include="Pipelines.Sockets.Unofficial">
+      <HintPath>..\..\lib\Pipelines.Sockets.Unofficial.dll</HintPath>
+      </Reference>
+      <Reference Include="System.Buffers">
+      <HintPath>..\..\lib\System.Buffers.dll</HintPath>
+      </Reference>
+      <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\..\lib\System.Diagnostics.DiagnosticSource.dll</HintPath>
+      </Reference>
+      <Reference Include="System.Diagnostics.PerformanceCounter">
+      <HintPath>..\..\lib\System.Diagnostics.PerformanceCounter.dll</HintPath>
+      </Reference>
+      <Reference Include="System.IO.Pipelines">
+      <HintPath>..\..\lib\System.IO.Pipelines.dll</HintPath>
+      </Reference>
+      <Reference Include="System.Memory">
+      <HintPath>..\..\lib\System.Memory.dll</HintPath>
+      </Reference>
+      <Reference Include="System.Numerics.Vectors">
+      <HintPath>..\..\lib\System.Numerics.Vectors.dll</HintPath>
+      </Reference>
+      <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>..\..\lib\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      </Reference>
+      <Reference Include="System.Threading.Channels">
+      <HintPath>..\..\lib\System.Threading.Channels.dll</HintPath>
+      </Reference>
+      <Reference Include="System.Threading.Tasks.Extensions">
+      <HintPath>..\..\lib\System.Threading.Tasks.Extensions.dll</HintPath>
+      </Reference>
+      <Reference Include="System.Web.Optimization">
+      <HintPath>..\..\lib\System.Web.Optimization.dll</HintPath>
+      </Reference>
+      <Reference Include="WebGrease">
+      <HintPath>..\..\lib\WebGrease.dll</HintPath>
+      </Reference>
+      <Reference Include="EntityFramework"/>
+      <Reference Include="EntityFramework.SqlServer"/>
+    </ItemGroup>
+</Project>
+

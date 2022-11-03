@@ -5,7 +5,7 @@ namespace eShopLegacyWebForms.Models
     public class CatalogDBContext : DbContext
     {
         public CatalogDBContext():
-            base(@"Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=Microsoft.eShopOnContainers.Services.CatalogDb; Integrated Security=True; MultipleActiveResultSets=True;")
+            base(@"Data Source=localhost; Initial Catalog=Microsoft.eShopOnContainers.Services.CatalogDb; Integrated Security=True; MultipleActiveResultSets=True;")
         {
         }
 

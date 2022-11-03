@@ -5,9 +5,9 @@ This repository contains a small WebForm demo for sales purpose.
 
 If you want more technical documentation about our webmap product:
 
-* [General Product Information](http://https://www.mobilize.net/products/app-migrations/webmap/ "General Product Information")
-* [Documentation for WebMap](http://https://docs.mobilize.net/webmap/ "Documentation for WebMap")
-* [Sample Reference App for VB6 and WinForms](http://https://github.com/MobilizeNet/SKS "* Sample Reference App for VB6 and WinForms")
+* [General Product Information](https://www.mobilize.net/products/app-migrations/webmap/ "General Product Information")
+* [Documentation for WebMap](https://docs.mobilize.net/webmap/ "Documentation for WebMap")
+* [Sample Reference App for VB6 and WinForms](https://github.com/MobilizeNet/SKS "* Sample Reference App for VB6 and WinForms")
 
 ## Repository Contents
 

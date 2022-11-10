@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace eShopLegacyWebForms.Models.Infrastructure
 {
-    public class CatalogDBInitializer : DropCreateDatabaseIfModelChanges<CatalogDBContext>
+    public class CatalogDBInitializer : CreateDatabaseIfNotExists<CatalogDBContext>
     {
         private const string DBCatalogSequenceName = "catalog_type_hilo";
         private const string DBBrandSequenceName = "catalog_brand_hilo";
@@ -14,22 +14,32 @@ namespace eShopLegacyWebForms.Models.Infrastructure
         private const string CatalogBrandHiLoSequenceScript = @"Models\Infrastructure\dbo.catalog_brand_hilo.Sequence.sql";
         private const string CatalogTypeHiLoSequenceScript = @"Models\Infrastructure\dbo.catalog_type_hilo.Sequence.sql";
 
+        private const string ProjectDirectory = @"C:\DEV\WebMAPDemos\src\WebForms\EShop\src\eShopLegacyWebForms";
+        private const string ProjectPictures = @"C:\DEV\WebMAPDemos\src\WebForms\EShop\src\eShopLegacyWebForms\Pics";
+
+
+
         private CatalogItemHiLoGenerator indexGenerator;
         public CatalogDBInitializer()
         {
             this.indexGenerator = new CatalogItemHiLoGenerator();
+            Seed(new CatalogDBContext(false));
         }
+
 
         protected override void Seed(CatalogDBContext context)
         {
-            ExecuteScript(context, CatalogItemHiLoSequenceScript);
-            ExecuteScript(context, CatalogBrandHiLoSequenceScript);
-            ExecuteScript(context, CatalogTypeHiLoSequenceScript);
-
-            AddCatalogTypes(context);
-            AddCatalogBrands(context);
-            AddCatalogItems(context);
-            AddCatalogItemPictures();
+            
+            if (context.CatalogTypes.LongCount() == 0)
+            {
+                ExecuteScript(context, CatalogItemHiLoSequenceScript);
+                ExecuteScript(context, CatalogBrandHiLoSequenceScript);
+                ExecuteScript(context, CatalogTypeHiLoSequenceScript);
+                AddCatalogTypes(context);
+                AddCatalogBrands(context);
+                AddCatalogItems(context);
+                AddCatalogItemPictures();
+            }
         }
 
         private void AddCatalogTypes(CatalogDBContext context)
@@ -85,14 +95,14 @@ namespace eShopLegacyWebForms.Models.Infrastructure
 
         private void ExecuteScript(CatalogDBContext context, string scriptFile)
         {
-            var scriptFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, scriptFile);
+            var scriptFilePath = Path.Combine(ProjectDirectory, scriptFile);
             context.Database.ExecuteSqlCommand(File.ReadAllText(scriptFilePath));
         }
 
         private void AddCatalogItemPictures()
         {
-            var contentRootPath = Directory.GetCurrentDirectory();
-            DirectoryInfo picturePath = new DirectoryInfo(Path.Combine(contentRootPath, "Pics"));
+            var contentRootPath = ProjectDirectory;
+            DirectoryInfo picturePath = new DirectoryInfo(Path.Combine(ProjectPictures));
             foreach (FileInfo file in picturePath.GetFiles())
             {
                 file.Delete();

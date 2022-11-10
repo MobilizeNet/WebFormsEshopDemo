@@ -1,5 +1,6 @@
 USE [Microsoft.eShopOnContainers.Services.CatalogDb]
 /****** Object:  Sequence [dbo].[catalog_brand_hilo]    Script Date: 16/08/2017 11:21:49 ******/
+DROP SEQUENCE IF EXISTS [dbo].[catalog_brand_hilo] 
 CREATE SEQUENCE [dbo].[catalog_brand_hilo] 
  AS [bigint]
  START WITH 1

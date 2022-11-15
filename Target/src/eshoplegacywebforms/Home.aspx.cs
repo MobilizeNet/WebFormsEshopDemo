@@ -2,6 +2,7 @@ using eShopLegacyWebForms.Models;
 using eShopLegacyWebForms.Services;
 using eShopLegacyWebForms.ViewModel;
 using System;
+using System.IO;
 using Mobilize.WebMap.Common.Attributes;
 
 namespace eShopLegacyWebForms
@@ -20,6 +21,7 @@ namespace eShopLegacyWebForms
 
       protected void Page_Load(object sender, EventArgs e)
       {
+
           CatalogService = new CatalogService();
           Model = CatalogService.GetCatalogItems();
           productList.DataSource = Model.Data;

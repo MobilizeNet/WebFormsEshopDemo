@@ -18,7 +18,7 @@ namespace eShopLegacyWebForms.Services
 
       public CatalogService()
       {
-          this.db = new CatalogDBContext();
+          this.db = new CatalogDBContext(false);
       }
 
       public CatalogItemsViewModel<CatalogItem> GetCatalogItems()

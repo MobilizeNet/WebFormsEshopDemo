@@ -12,7 +12,7 @@
   },
   "private": true,
  "dependencies": {
-    "@mobilize/webforms-components": "1.27.6",
+    "@mobilize/webforms-components": "1.27.12",
         "@angular/core": "~11.0.9",
     "@angular/compiler": "~11.0.9",
     "@angular/common": "~11.0.9",

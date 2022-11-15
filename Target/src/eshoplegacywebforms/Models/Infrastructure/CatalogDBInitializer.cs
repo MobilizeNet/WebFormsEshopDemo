@@ -10,7 +10,7 @@ namespace eShopLegacyWebForms.Models.Infrastructure
 {
 
    [Observable]
-   public class CatalogDBInitializer : DropCreateDatabaseIfModelChanges<CatalogDBContext>
+   public class CatalogDBInitializer : CreateDatabaseIfNotExists<CatalogDBContext>
    {
        private const string DBCatalogSequenceName = "catalog_type_hilo";
        private const string DBBrandSequenceName = "catalog_brand_hilo";
@@ -24,18 +24,23 @@ namespace eShopLegacyWebForms.Models.Infrastructure
       public CatalogDBInitializer()
       {
           this.indexGenerator = new CatalogItemHiLoGenerator();
+          Seed(new CatalogDBContext(false));
       }
+
 
       protected override void Seed(CatalogDBContext context)
       {
-          ExecuteScript(context, CatalogItemHiLoSequenceScript);
-          ExecuteScript(context, CatalogBrandHiLoSequenceScript);
-          ExecuteScript(context, CatalogTypeHiLoSequenceScript);
 
-          AddCatalogTypes(context);
-          AddCatalogBrands(context);
-          AddCatalogItems(context);
-          AddCatalogItemPictures();
+          if (context.CatalogTypes.LongCount() == 0)
+          {
+              ExecuteScript(context, CatalogItemHiLoSequenceScript);
+              ExecuteScript(context, CatalogBrandHiLoSequenceScript);
+              ExecuteScript(context, CatalogTypeHiLoSequenceScript);
+              AddCatalogTypes(context);
+              AddCatalogBrands(context);
+              AddCatalogItems(context);
+              AddCatalogItemPictures();
+          }
       }
 
       private void AddCatalogTypes(CatalogDBContext context)
@@ -97,13 +102,15 @@ namespace eShopLegacyWebForms.Models.Infrastructure
 
       private void AddCatalogItemPictures()
       {
-          var contentRootPath = Directory.GetCurrentDirectory();
-          DirectoryInfo picturePath = new DirectoryInfo(Path.Combine(contentRootPath, "Pics"));
-          foreach (FileInfo file in picturePath.GetFiles())
+          var contentRootPath = AppDomain.CurrentDomain.BaseDirectory;
+          DirectoryInfo picturePath = new DirectoryInfo(Path.Combine(contentRootPath,@"\Pics"));
+          if (Directory.Exists(picturePath.ToString()))
           {
-              file.Delete();
+              foreach (FileInfo file in picturePath.GetFiles())
+              {
+                  file.Delete();
+              }
           }
-
           string zipFileCatalogItemPictures = Path.Combine(contentRootPath, "Setup", "CatalogItems.zip");
          Stub._System.IO.Compression.ZipFile.ExtractToDirectory(zipFileCatalogItemPictures, picturePath.ToString());
       }

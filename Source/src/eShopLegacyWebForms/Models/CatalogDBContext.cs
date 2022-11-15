@@ -8,7 +8,7 @@ namespace eShopLegacyWebForms.Models
         public static bool isInitialized = false;
         public CatalogDBContext(bool initializeDB = true) :
             base(
-                @"Data Source=S16-WS12-DB011; Initial Catalog=Microsoft.eShopOnContainers.Services.CatalogDb;persist security info=True;  user id=productreader;password=curlyLe@f15")
+                @"Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=Microsoft.eShopOnContainers.Services.CatalogDb; Integrated Security=True; MultipleActiveResultSets=True;")
         {
             if (isInitialized == false)
             {

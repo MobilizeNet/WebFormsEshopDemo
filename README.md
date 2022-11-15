@@ -22,6 +22,7 @@ If you want to build this project on your development machine, just check that y
 * [Node.js LTS](https://nodejs.org/en/download/)
 * [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)
 * [.NET Core](https://dotnet.microsoft.com/download)
+* [SQLManager Studio](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16)
 
 > NOTE: Your installation of Visual Studio, must include the *ASP.NET and Web Development Feature *
 >
@@ -33,6 +34,7 @@ To build your application just open the `Target/eShop.sln` file with VS Studio a
 > NOTE: the angular frontend is already built. If you want to build it yourself see the step on Building the Frontend code.
 
 
+
 ## Building the FrontEnd code
 
 To build the frontend code make sure you already have [Node.js LTS](https://nodejs.org/en/download/) installed.
@@ -42,3 +44,6 @@ Open a terminal and run:
 npm install
 npm run build
 ```
+
+# Steps to run application
+To run the app, you need to build the FrontEnd code before build the solution, after that you will be able to run the solution without any problems

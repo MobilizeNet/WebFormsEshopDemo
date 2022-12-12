@@ -37,6 +37,7 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
+              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -48,19 +49,6 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ]
-            },
-            "debug": {
-              "sourceMap": {
-                "vendor": true,
-                "scripts": true
-              },
-              "optimization": false,
-              "outputHashing": "all",
-              "namedChunks": false,
-              "aot": false,
-              "extractLicenses": false,
-              "vendorChunk": false,
-              "buildOptimizer": false
             }
           }
         },
@@ -85,6 +73,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/test.ts",
+            "karmaConfig": "./karma.conf.js",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
             "scripts": [
